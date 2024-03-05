@@ -1,0 +1,42 @@
+<nav class="ncl-main-side-menu" data-ng-if="$ctrl.isMenuShown">
+    <div class="top-container" data-ng-style="{height: $ctrl.isNamespacesExist() ? '176px' : '119px'}">
+        <div class="main-logo"></div>
+        <div class="namespace-container" data-ng-if="$ctrl.isNamespacesExist()">
+            <div class="namespace-label">{{ 'functions:NAMESPACE' | i18next }}</div>
+            <div class="namespace-dropdown-container">
+                <igz-default-dropdown
+                        data-selected-item="$ctrl.namespaceData.selectedNamespace"
+                        data-values-array="$ctrl.namespaceData.namespaces"
+                        data-item-select-callback="$ctrl.onDataChange(item)"
+                        data-placeholder="Namespace"
+                        data-icon-class="igz-icon-down">
+                </igz-default-dropdown>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="side-menu-scrollable-area-wrapper" data-ng-style="{top: $ctrl.isNamespacesExist() ? '176px' : '119px'}"
+             data-ng-scrollbars>
+            <div class="side-menu-scrollable-area">
+                <a class="side-menu-item"
+                   data-ui-sref="app.projects"
+                   data-ng-class="{'active': $ctrl.isActiveState(['app.projects', 'app.project', 'app.create-function'])}">
+                    <span class="menu-item-title">{{ 'common:PROJECTS' | i18next }}</span>
+                </a>
+                <a class="side-menu-item"
+                   data-ng-if="$ctrl.isDemoMode()">
+                    <div class="menu-item-title">{{ 'common:CONFIGURATION' | i18next }}</div>
+                </a>
+                <a class="side-menu-item"
+                   data-ng-if="$ctrl.isDemoMode()">
+                    <div class="menu-item-title">{{ 'common:MONITORING' | i18next }}</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-container">
+        <span class="version-number">{{$ctrl.nuclioVersion}}</span>
+    </div>
+</nav>

@@ -1,0 +1,11 @@
+{
+  "name": "dashboard-test-server",
+  "author": "Roy Sommer",
+  "version": "0.0.1",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-http-proxy": "^1.6.2",
+    "serve-static": "1.15.0"
+  }
+}
