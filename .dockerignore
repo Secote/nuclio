@@ -1,0 +1,15 @@
+*
+!pkg
+!cmd
+!test
+
+!.bin
+
+!go.mod
+!go.sum
+
+pkg/dashboard/ui/node_modules
+pkg/dashboard/ui/dist
+
+**/Dockerfile
+**/Dockerfile.alpine
